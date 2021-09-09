@@ -29,7 +29,7 @@ async def status(ctx):
 		stat["players_max"] = st.players_max
 		await ctx.send(embed=discord. Embed(title="Статус сервера", description=f"""Имя: {stat["motd"]}
 Статус: 🟩Онлайн
-Пинг: {round(status.latency*1000)}ms
+Пинг: {round(st.latency*1000)}ms
 Игроки: {st.players_online}/{stat["players_max"]}
 Версия: {stat["version"]}""", color = discord.Color.green()))
 	except:
