@@ -1,0 +1,2 @@
+discord==1.7.3
+mcstatus==6.5.0
