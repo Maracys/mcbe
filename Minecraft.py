@@ -14,7 +14,7 @@ status = {
 	"latency":0,
 	"players_max":100,
 	"players_online":0,
-	"types":{True:"🟩Онлайн", False:"🟥Оффлайн"}
+	"types":{True:["🟩Онлайн", discord.Color.green()], False:["🟥Оффлайн", discord.Color.red()]}
 }
 
 server = MinecraftBedrockServer(f"{status['ip']}:{status['port']}")
@@ -58,8 +58,8 @@ async def info(ctx):
 @client.command()
 async def stat(ctx):
 	await get_status()
-	await ctx.send(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]]}
+	await ctx.send(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]][0]}
 Пинг: {round(status["latency"]*1000)}ms
-Игроки: {status["players_online"]}/{status["players_max"]}""", color = discord.Color.green()))
+Игроки: {status["players_online"]}/{status["players_max"]}""", color = status["types"][status["online"]][1]))
 
 client.run("ODg1NDI0MjU3NTk1NzQ4MzUy.YTm1mQ.iJPTkRbcNoGZAwgUbmoIoiUZ6MA")
