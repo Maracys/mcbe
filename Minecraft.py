@@ -51,7 +51,8 @@ async def info(ctx):
 Айпи: {status["ip"]}
 Порт: {status["port"]}
 Тип: Bedrock Edition
-[Скачать {status["version"]}](https://disk.yandex.ru/d/GQepjV0oxVOzrg)""", color = discord.Color.green())
+[Скачать {status["version"]}](https://disk.yandex.ru/d/GQepjV0oxVOzrg)
+Статус: {client.command_prefix}stat""", color = discord.Color.green())
 	await ctx.send(embed=emb)
 
 @client.command()
