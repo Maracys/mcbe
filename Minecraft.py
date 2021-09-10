@@ -1,9 +1,11 @@
-import discord
+import discord, asyncio, datetime
 from discord.ext import commands
 from mcstatus import MinecraftBedrockServer
 
 client = commands.Bot(command_prefix="mc.", intents=discord.Intents.all(), activity=discord.Game(name="mc.info"), status=discord.Status.idle)
 client.remove_command("help")
+
+inter = {}
 
 status = {
 	"ip":"94.130.53.134",
@@ -14,7 +16,7 @@ status = {
 	"latency":0,
 	"players_max":100,
 	"players_online":0,
-	"types":{True:["🟩Онлайн", discord.Color.green()], False:["🟥Оффлайн", discord.Color.red()]}
+	"types":{True:"🟩Онлайн", False:"🟥Оффлайн"}
 }
 
 server = MinecraftBedrockServer(f"{status['ip']}:{status['port']}")
@@ -33,17 +35,23 @@ async def get_status():
 		status["players_online"] = 0
 		status["latency"] = 0
 		status["online"] = False
-		
 
 @client.event
 async def on_ready():
-	await get_status()
 	print(f"""------------------------------
 Имя: {client.user.name}
 Айди: {client.user.id}
 Серверов: {len(client.guilds)}
 ------------------------------""")
-
+	while True:
+		await get_status()
+		msg = await client.fetch_channel(885850390099271720)
+		msg = await msg.fetch_message(885850580336119838)
+		await msg.edit(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]]}
+Пинг: {round(status["latency"]*1000)}ms
+Игроки: {status["players_online"]}/{status["players_max"]}""", timestamp=datetime.datetime.utcnow(), color = discord.Color.green()))
+		await asyncio.sleep(60)
+		
 @client.command()
 async def info(ctx):
 	await get_status()
@@ -54,12 +62,5 @@ async def info(ctx):
 [Скачать {status["version"]}](https://disk.yandex.ru/d/GQepjV0oxVOzrg)
 Статус: {client.command_prefix}stat""", color = discord.Color.green())
 	await ctx.send(embed=emb)
-
-@client.command()
-async def stat(ctx):
-	await get_status()
-	await ctx.send(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]][0]}
-Пинг: {round(status["latency"]*1000)}ms
-Игроки: {status["players_online"]}/{status["players_max"]}""", color = status["types"][status["online"]][1]))
 
 client.run("ODg1NDI0MjU3NTk1NzQ4MzUy.YTm1mQ.iJPTkRbcNoGZAwgUbmoIoiUZ6MA")
