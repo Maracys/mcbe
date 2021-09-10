@@ -16,7 +16,7 @@ status = {
 	"latency":0,
 	"players_max":100,
 	"players_online":0,
-	"types":{True:"🟩Онлайн", False:"🟥Оффлайн"}
+	"types":{True:["🟩Онлайн", discord.Color.green()], False:["🟥Оффлайн", discord.Color.red()]}
 }
 
 server = MinecraftBedrockServer(f"{status['ip']}:{status['port']}")
@@ -47,9 +47,9 @@ async def on_ready():
 		await get_status()
 		msg = await client.fetch_channel(885850390099271720)
 		msg = await msg.fetch_message(885850580336119838)
-		await msg.edit(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]]}
+		await msg.edit(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]][0]}
 Пинг: {round(status["latency"]*1000)}ms
-Игроки: {status["players_online"]}/{status["players_max"]}""", timestamp=datetime.datetime.utcnow(), color = discord.Color.green()))
+Игроки: {status["players_online"]}/{status["players_max"]}""", timestamp=datetime.datetime.utcnow(), color = status["types"][status["online"]][1]))
 		await asyncio.sleep(60)
 		
 @client.command()
