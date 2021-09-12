@@ -50,7 +50,7 @@ async def on_ready():
 		await msg.edit(embed=discord. Embed(title="Статус сервера", description=f"""Статус: {status["types"][status["online"]][0]}
 Пинг: {round(status["latency"]*1000)}ms
 Игроки: {status["players_online"]}/{status["players_max"]}""", timestamp=datetime.datetime.utcnow(), color = status["types"][status["online"]][1]))
-		await asyncio.sleep(60)
+		await asyncio.sleep(30)
 		
 @client.command()
 async def info(ctx):
