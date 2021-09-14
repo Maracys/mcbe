@@ -8,8 +8,8 @@ client.remove_command("help")
 inter = {}
 
 status = {
-	"ip":"94.130.53.134",
-	"port":"26383",
+	"ip":"162.55.232.104",
+	"port":"38903",
 	"name":"EditedWorld",
 	"version":"1.17.11",
 	"online":False,
