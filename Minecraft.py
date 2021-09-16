@@ -54,7 +54,6 @@ async def on_ready():
 		
 @client.command()
 async def info(ctx):
-	await get_status()
 	emb=discord. Embed(title="Информация сервера", description=f"""Имя: {status["name"]}
 Айпи: {status["ip"]}
 Порт: {status["port"]}
