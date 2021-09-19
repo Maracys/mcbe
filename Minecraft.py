@@ -10,7 +10,7 @@ inter = {}
 status = {
 	"ip":"162.55.232.104",
 	"port":"38903",
-	"name":"EditedWorld",
+	"name":"EditedWorld Season 1",
 	"version":"1.17.11",
 	"online":False,
 	"latency":0,
