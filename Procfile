@@ -1,1 +1,1 @@
-worker: python Minecraft.py
+worker: python Checker.py
