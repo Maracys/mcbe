@@ -3,8 +3,8 @@ from discord.ext import commands
 from mcstatus import MinecraftBedrockServer
 
 info = {
-	"ip":"whale.de.freemcserver.net",
-	"port":"25648"
+	"ip":"goose.de.freemcserver.net",
+	"port":"25591"
 }
 server = MinecraftBedrockServer.lookup(info["ip"]+":"+info["port"])
 info["status"] = server.status()
