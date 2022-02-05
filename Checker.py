@@ -51,7 +51,9 @@ https://freemcserver.net/server/690654
 3) Пройдите капчу
 4) Нажмите "Renew server"
 5) Вернитесь на начальную страницу
-6) Нажмите "Start server"```""", inline=False)
+6) Нажмите "Start server"
+7) Пройдите капчу
+8) Нажмите "Start server"```""", inline=False)
 		if msg:
 			await msg.edit(embed=embed)
 		else:
