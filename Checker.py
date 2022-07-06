@@ -3,10 +3,10 @@ from discord.ext import commands
 from mcstatus import MinecraftBedrockServer
 
 info = {
-	"ip":"panda.de.freemcserver.net",
-	"port":"25816",
+	"ip":"goose.de.freemcserver.net",
+	"port":"25653",
 	"motd":"EditedWorld",
-	"version":"1.18.0"
+	"version":"1.19.0"
 }
 
 server = MinecraftBedrockServer.lookup(info["ip"]+":"+info["port"])
@@ -44,7 +44,7 @@ async def on_ready():
 		else:
 			embed.color = discord.Color.red()
 			embed.add_field(name="Статус: 🔴Оффлайн", value="""Запустите сервер здесь:
-https://freemcserver.net/server/690654
+https://freemcserver.net/server/787603
 ```py
 1) Впишите ваш ник
 2) Нажмите "Renew server"
