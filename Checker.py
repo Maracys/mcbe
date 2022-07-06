@@ -6,7 +6,7 @@ info = {
 	"ip":"goose.de.freemcserver.net",
 	"port":25653,
 	"motd":"EditedWorld",
-	"version":"1.19.0"
+	"version":"1.19.2"
 }
 
 client = commands.Bot(command_prefix="be.", intents=discord.Intents.all(), activity=discord.Game(name="Bedrock Server"), status=discord.Status.idle)
