@@ -30,11 +30,9 @@ async def on_ready():
 		exit()
 	while True:
 		online = False
-		vars = [info['version'], info['motd']]
 		with mcstats(info["ip"], port=info["port"], timeout=10) as server:
-			vars = [server.game_version, server.server_name]
 			online = True
-		embed = discord.Embed(title=vars[1], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{vars[0]}`", timestamp=datetime.datetime.utcnow())
+		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`", timestamp=datetime.datetime.utcnow())
 		if online:
 			embed.color = discord.Color.green()
 			embed.add_field(name="Статус: 🟢Онлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
