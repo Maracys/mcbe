@@ -44,7 +44,7 @@ async def on_ready():
 		else:
 			embed.color = discord.Color.red()
 			embed.add_field(name="Статус: 🔴Оффлайн", value="""Запустите сервер здесь:
-https://freemcserver.net/server/787630
+https://freemcserver.net/server/787632
 ```py
 1) Впишите ваш ник
 2) Нажмите "Renew server"
