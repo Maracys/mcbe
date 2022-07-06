@@ -29,9 +29,11 @@ async def on_ready():
 		print(e)
 		exit()
 	while True:
-		online = False
-		with mcstats(info["ip"], port=info["port"], timeout=10) as server:
-			online = True
+		try:
+			with mcstats(info["ip"], port=info["port"], timeout=10) as server:
+				online = True
+		except:
+			online = False
 		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`", timestamp=datetime.datetime.utcnow())
 		if online:
 			embed.color = discord.Color.green()
