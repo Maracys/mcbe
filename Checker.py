@@ -3,8 +3,8 @@ from discord.ext import commands
 from mcstats import mcstats
 
 info = {
-	"ip":"editedworld.mcnetwork.me",
-	"port":41024,
+	"ip":"46.4.71.235",
+	"port":37911,
 	"motd":"EditedWorld",
 	"version":"1.19.2"
 }
