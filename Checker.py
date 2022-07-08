@@ -4,7 +4,7 @@ from mcstats import mcstats
 
 info = {
 	"ip":"46.4.71.235",
-	"port":37911,
+	"port":43819,
 	"motd":"EditedWorld",
 	"version":"1.19.2"
 }
