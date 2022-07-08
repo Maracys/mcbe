@@ -3,8 +3,8 @@ from discord.ext import commands
 from mcstats import mcstats
 
 info = {
-	"ip":"goose.de.freemcserver.net",
-	"port":25653,
+	"ip":"51.161.84.142",
+	"port":41024,
 	"motd":"EditedWorld",
 	"version":"1.19.2"
 }
@@ -40,16 +40,7 @@ async def on_ready():
 			embed.add_field(name="Статус: 🟢Онлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
 		else:
 			embed.color = discord.Color.red()
-			embed.add_field(name="Статус: 🔴Оффлайн", value="""Запустите сервер здесь:
-https://freemcserver.net/server/787632
-```py
-1) Впишите ваш ник
-2) Нажмите "Renew server"
-3) Пройдите капчу
-4) Нажмите "Renew"
-5) Вам дастся 1 железный слиток
-6) Вернитесь на страницу с ником
-7) Нажмите "Start server"```""", inline=False)
+			embed.add_field(name="Статус: 🔴Оффлайн", value="""Попросите запустить сервер!""", inline=False)
 		if msg:
 			await msg.edit(embed=embed)
 		else:
