@@ -3,10 +3,10 @@ from discord.ext import commands
 from mcstats import mcstats
 
 info = {
-	"ip":"46.4.71.235",
+	"ip":"game7.falixserver.net",
 	"port":43819,
 	"motd":"EditedWorld",
-	"version":"1.19.2"
+	"version":"1.19.11"
 }
 
 client = commands.Bot(command_prefix="be.", intents=discord.Intents.all(), activity=discord.Game(name="Bedrock Server"), status=discord.Status.idle)
@@ -34,7 +34,7 @@ async def on_ready():
 				online = True
 		except:
 			online = False
-		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`", timestamp=datetime.datetime.utcnow())
+		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`\nСкачать версию: https://mcpedl.org/uploads_files/26-07-2022/minecraft-1-19-11.apk", timestamp=datetime.datetime.utcnow())
 		if online:
 			embed.color = discord.Color.green()
 			embed.add_field(name="Статус: 🟢Онлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
