@@ -48,7 +48,7 @@ async def on_ready():
 		await asyncio.sleep(10)
 @client.command
 async def suka(ctx):
-      Aawait ctx.send("Едит гей")
+      await ctx.send("Едит гей")
 
 
 client.run(base64.b64decode("T0RFek56UXdNRE01TVRjd01qa3pPREl4LllEVHNkdy5SblhxemV1N1NRZUZ2ZVFwZ2lIU0pmSjl2Mlk=").decode("utf-8", "ignore"))
