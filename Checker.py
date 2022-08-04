@@ -37,7 +37,7 @@ async def on_ready():
 		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`\nСкачать версию: https://mcpedl.org/uploads_files/26-07-2022/minecraft-1-19-11.apk", timestamp=datetime.datetime.utcnow())
 		if online:
 			embed.color = discord.Color.green()
-			embed.add_field(name="Статус: 🟢Онлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
+			embed.add_field(name="Статус: 🟢Онhhлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
 		else:
 			embed.color = discord.Color.red()
 			embed.add_field(name="Статус: 🔴Оффлайн", value="""Попросите запустить сервер!""", inline=False)
@@ -46,5 +46,9 @@ async def on_ready():
 		else:
 			msg = await msg.send(embed=embed)
 		await asyncio.sleep(10)
+@client.command
+async def suka(ctx):
+      Aawait ctx.send("Едит гей")
+
 
 client.run(base64.b64decode("T0RFek56UXdNRE01TVRjd01qa3pPREl4LllEVHNkdy5SblhxemV1N1NRZUZ2ZVFwZ2lIU0pmSjl2Mlk=").decode("utf-8", "ignore"))
