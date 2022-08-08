@@ -24,7 +24,7 @@ async def on_ready():
 ------------------------------""")
 	msg = await client.fetch_channel(1006110963180785685)
 	try:
-		msg = await msg.fetch_message()
+		msg = await msg.fetch_message(1006120818184560751)
 	except Exception as e:
 		print(e)
 		exit()
