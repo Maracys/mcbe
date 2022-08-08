@@ -22,9 +22,9 @@ async def on_ready():
 Айди: {client.user.id}
 Серверов: {len(client.guilds)}
 ------------------------------""")
-	msg = await client.fetch_channel(1004339729988333658)
+	msg = await client.fetch_channel(1006110963180785685)
 	try:
-		msg = await msg.fetch_message(1004342422551134308)
+		msg = await msg.fetch_message()
 	except Exception as e:
 		print(e)
 		exit()
