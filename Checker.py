@@ -3,13 +3,13 @@ from discord.ext import commands
 from mcstats import mcstats
 
 info = {
-	"ip":"game7.falixserver.net",
-	"port":43819,
-	"motd":"EditedWorld",
+	"ip":"game3.falixserver.net",
+	"port":63142,
+	"motd":"PepeWorld",
 	"version":"1.19.11"
 }
 
-client = commands.Bot(command_prefix="be.", intents=discord.Intents.all(), activity=discord.Game(name="Bedrohck Server"), status=discord.Status.idle)
+client = commands.Bot(command_prefix="be.", intents=discord.Intents.all(), activity=discord.Game(name="Bedrock Server"), status=discord.Status.idle)
 client.remove_command("help")
 
 msg = False
@@ -37,7 +37,7 @@ async def on_ready():
 		embed = discord.Embed(title=info["motd"], description=f"Айпи: `{info['ip']}`\nПорт: `{info['port']}`\nВерсия: `{info['version']}`\nСкачать версию: https://mcpedl.org/uploads_files/26-07-2022/minecraft-1-19-11.apk", timestamp=datetime.datetime.utcnow())
 		if online:
 			embed.color = discord.Color.green()
-			embed.add_field(name="Статус: 🟢Онhhлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
+			embed.add_field(name="Статус: 🟢Онлайн", value=f"Игроки: {server.num_players}/{server.max_players}\nПинг: {round(server.ping_id/1000%60)}ms", inline=False)
 		else:
 			embed.color = discord.Color.red()
 			embed.add_field(name="Статус: 🔴Оффлайн", value="""Попросите запустить сервер!""", inline=False)
@@ -51,4 +51,4 @@ async def suka(ctx):
         await ctx.send("Едит гей")
 
 
-client.run(base64.b64decode("T0RFek56UXdNRE01TVRjd01qa3pPREl4LllEVHNkdy5SblhxemV1N1NRZUZ2ZVFwZ2lIU0pmSjl2Mlk=").decode("utf-8", "ignore"))
+client.run(base64.b64decode("TVRBd05qRXhOREF4TlRjM09EUTBNek13TkEuR2JWNFQ3LmRROHdGRFJldVBCUHRib1RJazNVRlJuTXBhMmswMUY3NWM2am9n").decode("utf-8", "ignore"))
